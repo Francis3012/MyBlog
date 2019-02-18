@@ -1,0 +1,26 @@
+<% include partials/header %>
+
+<div class="container">
+  <div class="alert alert-light" role="alert">
+    <h4 class="alert-heading">Enter a new Blog</h4>
+    <p>Enter a new blog title, Image Url and the blog content.</p>
+    <hr>
+    <form action="/blogs" method="POST">
+      <div class="form-group">
+        <lable for="input-title">Blog Title</lable>
+        <input type="text" id="input-title" class="form-control" name="blog[title]" placeholder="Title">
+      </div>
+      <div class="form-group">
+        <lable for="input-url">Image URL</lable>
+        <input type="url" id="input-url" class="form-control" name="blog[image]" placeholder="Image">
+      </div>
+      <div class="form-group">
+        <lable for="input-body">Blog content</lable>
+        <textarea class="form-control" id="input-body" rows="3" name="blog[body]"></textarea>
+      </div>
+      <input class="btn btn-outline-dark" type="submit">
+    </form>
+  </div>
+</div>
+
+<% include partials/footer %>

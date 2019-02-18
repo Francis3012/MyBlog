@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+<div class="container">
+  <div class="row">
+    <h1 class="col-md-12">Hi welcome to my blog!</h1>
+    <p class="col-md-12">If I have a problem with some of my code, I like to post my problem and my solution here.</p>
+  </div>
+
+  <% blogs.forEach(function(blog) { %>
+    <div class="card mb-3 mt-3 bg-dark">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="<%= blog.image %>" class="card-img">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <a class="card-title" href="/blogs/<%= blog._id %>"><%=blog.title%></a>
+            <p class="card-text"><%- blog.body.substring(0, 100) %>...</p>
+            <a type="button" class="btn btn-outline-light" href="/blogs/<%= blog._id %>">More Info <i class="far fa-arrow-alt-circle-right"></i></a>
+          </div>
+          <p class="card-text"><small class="text-muted"><%= blog.created.toDateString() %></small></p>
+        </div>
+      </div>
+    </div>
+  <% }); %>
+    
+</div>
+
+<% include partials/footer %>
